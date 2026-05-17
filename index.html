@@ -11,15 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- DESIGN SYSTEM & VARIABLES --- */
+        /* --- DESIGN SYSTEM & VARIABLES (LIGHT MONOCHROME) --- */
         :root {
-            --bg-color: #0a0a0a;
-            --bg-card: #121212;
-            --border-color: #222222;
-            --text-main: #ffffff;
-            --text-muted: #8e8e93;
-            --text-dim: #48484a;
-            --accent: #ffffff;
+            --bg-color: #ffffff;
+            --bg-card: #f5f5f7;
+            --border-color: #e5e5ea;
+            --text-main: #000000;
+            --text-muted: #6e6e73;
+            --text-dim: #aeaea3;
+            --accent: #000000;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -91,7 +91,7 @@
 
         .btn-primary {
             background-color: var(--accent);
-            color: #000000;
+            color: #ffffff;
             border: 1px solid var(--accent);
         }
 
@@ -103,11 +103,12 @@
         .btn-secondary {
             background-color: transparent;
             color: var(--text-main);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--text-main);
         }
 
         .btn-secondary:hover {
-            border-color: var(--text-main);
+            background-color: var(--text-main);
+            color: #ffffff;
         }
 
         /* --- NAVIGATION --- */
@@ -116,8 +117,8 @@
             top: 0;
             width: 100%;
             z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            background-color: rgba(10, 10, 10, 0.75);
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             transition: var(--transition-smooth);
@@ -149,7 +150,7 @@
             color: var(--text-muted);
             text-decoration: none;
             transition: var(--transition-smooth);
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
@@ -192,7 +193,7 @@
         /* --- TRUST / SOCIAL PROOF STRIP --- */
         .ticker-section {
             padding: 2.5rem 0;
-            background-color: #000000;
+            background-color: #ffffff;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             overflow: hidden;
@@ -207,10 +208,10 @@
 
         .ticker-item {
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.3em;
-            color: var(--text-dim);
+            color: #000000;
             padding: 0 4rem;
             display: flex;
             align-items: center;
@@ -242,7 +243,7 @@
             font-size: 1.6rem;
             line-height: 1.5;
             color: var(--text-main);
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: -0.02em;
         }
 
@@ -250,7 +251,7 @@
             font-size: 1.05rem;
             line-height: 1.7;
             color: var(--text-muted);
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* --- SERVICES SECTION --- */
@@ -273,7 +274,8 @@
 
         .service-card:hover {
             border-color: var(--text-main);
-            background-color: #000000;
+            background-color: #ffffff;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
         }
 
         .service-icon {
@@ -281,18 +283,17 @@
         }
 
         .service-icon svg {
-            stroke: var(--text-muted);
+            stroke: var(--text-main);
             transition: var(--transition-smooth);
         }
 
         .service-card:hover .service-icon svg {
-            stroke: var(--text-main);
-            transform: translateX(3px);
+            transform: translateX(4px);
         }
 
         .service-card h3 {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
@@ -301,7 +302,7 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             line-height: 1.6;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* --- WHY ZEC CODE SECTION --- */
@@ -318,15 +319,15 @@
 
         .why-num {
             font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-dim);
+            font-weight: 700;
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
             display: block;
         }
 
         .why-item h4 {
             font-size: 1.15rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 0.75rem;
             letter-spacing: -0.01em;
         }
@@ -335,14 +336,14 @@
             font-size: 0.9rem;
             color: var(--text-muted);
             line-height: 1.6;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* --- PORTFOLIO PREVIEW --- */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .portfolio-item {
@@ -363,12 +364,11 @@
             overflow: hidden;
         }
 
-        /* Minimal high-end vector lines acting as a premium abstract layout representation */
         .mockup-blueprint {
             width: 70%;
             height: 50%;
-            border: 1px dashed var(--text-dim);
-            opacity: 0.4;
+            border: 1px dashed #cccccc;
+            opacity: 0.7;
             transition: var(--transition-smooth);
             display: flex;
             flex-direction: column;
@@ -378,31 +378,33 @@
 
         .blueprint-line {
             height: 2px;
-            background-color: var(--text-dim);
+            background-color: #cccccc;
             width: 40%;
         }
 
         .portfolio-item:hover .mockup-frame {
             border-color: var(--text-main);
-            background-color: #000000;
+            background-color: #ffffff;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
         }
 
         .portfolio-item:hover .mockup-blueprint {
             opacity: 1;
             transform: scale(1.02);
-            border-color: var(--text-muted);
+            border-color: var(--text-main);
         }
 
         .portfolio-info {
             margin-top: 1.5rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .portfolio-title {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
         }
 
         .portfolio-category {
@@ -410,11 +412,27 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        /* --- LIVE EMBED PREVIEW INTERACTION --- */
+        .live-embed-frame:hover iframe {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+        .live-embed-frame:hover .embed-overlay {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .live-embed-frame:hover {
+            border-color: var(--text-main) !important;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08) !important;
         }
 
         /* --- FINAL CTA --- */
         .cta-section {
-            background-color: #000000;
+            background-color: var(--bg-card);
             text-align: center;
             padding: 12rem 0;
         }
@@ -436,13 +454,13 @@
             font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 3rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* --- FOOTER --- */
         footer {
             padding: 5rem 0;
-            background-color: var(--bg-color);
+            background-color: #ffffff;
         }
 
         .footer-grid {
@@ -495,7 +513,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.8rem;
-            color: var(--text-dim);
+            color: var(--text-muted);
         }
 
         /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
@@ -503,6 +521,8 @@
             .hero h1 { font-size: 3.2rem; }
             .about-grid { grid-template-columns: 1fr; gap: 2rem; }
             .portfolio-grid { grid-template-columns: 1fr; }
+            .portfolio-item-wrapper[style*="grid-column: span 2"] { grid-column: span 1 !important; }
+            .live-embed-frame { height: 400px !important; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
             .footer-brand { grid-column: span 2; }
             section { padding: 6rem 0; }
@@ -511,7 +531,7 @@
         @media (max-width: 640px) {
             .hero h1 { font-size: 2.5rem; }
             .hero-cta { flex-direction: column; }
-            .nav-links { display: none; } /* Kept clean, can toggle or use bottom bar */
+            .nav-links { display: none; }
             .footer-grid { grid-template-columns: 1fr; }
             .footer-brand { grid-column: span 1; }
             .cta-section h2 { font-size: 2.2rem; }
@@ -520,7 +540,7 @@
 </head>
 <body>
 
-    <!-- INTERACTION & LAYOUT RHYTHM INTERFACES -->
+    <!-- NAVIGATION -->
     <nav id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">Zec Code</a>
@@ -530,7 +550,7 @@
                 <a href="#why">Philosophy</a>
                 <a href="#work">Work</a>
             </div>
-            <a href="#contact" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Build Yours</a>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Build Yours</a>
         </div>
     </nav>
 
@@ -585,17 +605,15 @@
             <h2 class="section-title">Engineered for digital dominance.</h2>
             
             <div class="services-grid">
-                <!-- Card 1 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     <div>
                         <h3>Landing Pages</h3>
-                        <p>High-conversion performance frameworks targeted strictly to turns clicks into corporate revenue pipelines.</p>
+                        <p>High-conversion performance frameworks targeted strictly to turn clicks into corporate revenue pipelines.</p>
                     </div>
                 </div>
-                <!-- Card 2 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
@@ -605,7 +623,6 @@
                         <p>Sophisticated multi-page digital flags built to define your authority inside your market landscape.</p>
                     </div>
                 </div>
-                <!-- Card 3 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -615,7 +632,6 @@
                         <p>Agile, dynamic structural interfaces deployed quickly to secure rapid early investor and user traction.</p>
                     </div>
                 </div>
-                <!-- Card 4 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M3 20v-8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8"></path></svg>
@@ -669,14 +685,14 @@
             <div class="portfolio-grid">
                 <!-- Project 1: Zeus Bus (Live Embedded Web Interface) -->
                 <div class="portfolio-item-wrapper" style="grid-column: span 2;">
-                    <div class="mockup-frame live-embed-frame" style="height: 540px; position: relative; padding: 0; background: #000; overflow: hidden;">
+                    <div class="mockup-frame live-embed-frame" style="height: 540px; position: relative; padding: 0; background: #fafafa; overflow: hidden;">
                         
                         <!-- Real-time Interactive Embedded Iframe -->
-                        <iframe src="https://ironjamal.github.io/zeus-bus/" title="Zeus Bus Live Preview" style="width: 100%; height: 100%; border: none; opacity: 0.5; transition: var(--transition-smooth); pointer-events: none;"></iframe>
+                        <iframe src="https://ironjamal.github.io/zeus-bus/" title="Zeus Bus Live Preview" style="width: 100%; height: 100%; border: none; opacity: 0.6; transition: var(--transition-smooth); pointer-events: none;"></iframe>
                         
-                        <!-- Elite UI Glass Overlay Layer (Disappears smoothly on hover to unlock scrolling) -->
-                        <div class="embed-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: var(--transition-smooth); cursor: pointer; z-index: 2;">
-                            <div class="action-badge" style="background: #ffffff; color: #000000; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 0.8rem 1.5rem; transition: var(--transition-smooth);">
+                        <!-- Elite UI Glass Overlay Layer -->
+                        <div class="embed-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.85) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: var(--transition-smooth); cursor: pointer; z-index: 2;">
+                            <div class="action-badge" style="background: #000000; color: #ffffff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 0.8rem 1.5rem; transition: var(--transition-smooth);">
                                 Interact With Live Interface
                             </div>
                         </div>
@@ -684,42 +700,18 @@
                     <div class="portfolio-info">
                         <div>
                             <span class="portfolio-title" style="font-size: 1.3rem;">Zeus Bus Logistics</span>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; font-weight: 300;">High-contrast corporate transit landing infrastructure & data acquisition engine.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; font-weight: 400;">High-contrast corporate transit landing infrastructure & data acquisition engine.</p>
                         </div>
                         <span class="portfolio-category">01 / Transportation Line</span>
                     </div>
                 </div>
 
-                <!-- Custom Scoping CSS Styles for Live Frame System -->
-                <style>
-                    .live-embed-frame:hover iframe {
-                        opacity: 1 !important;
-                        pointer-events: auto !important;
-                    }
-                    .live-embed-frame:hover .embed-overlay {
-                        opacity: 0;
-                        visibility: hidden;
-                        pointer-events: none;
-                    }
-                    .live-embed-frame:hover {
-                        border-color: var(--text-main) !important;
-                    }
-                    @media (max-width: 968px) {
-                        .portfolio-item-wrapper[style*="grid-column: span 2"] {
-                            grid-column: span 1 !important;
-                        }
-                        .live-embed-frame {
-                            height: 400px !important;
-                        }
-                    }
-                </style>
-
                 <!-- Project 2 -->
                 <a href="#contact" class="portfolio-item">
                     <div class="mockup-frame">
                         <div class="mockup-blueprint">
-                            <div class="blueprint-line" style="width: 25%;"></div>
-                            <div class="blueprint-line" style="width: 80%; height: 20px;"></div>
+                            <div class="blueprint-line" style="background-color: var(--text-main); width: 25%;"></div>
+                            <div class="blueprint-line" style="background-color: var(--text-muted); width: 80%; height: 20px;"></div>
                             <div class="blueprint-line" style="width: 50%;"></div>
                         </div>
                     </div>
@@ -736,7 +728,7 @@
                     <div class="mockup-frame">
                         <div class="mockup-blueprint">
                             <div class="blueprint-line" style="width: 40%;"></div>
-                            <div class="blueprint-line" style="width: 90%; height: 30px; border: 1px dashed var(--text-dim); background: transparent;"></div>
+                            <div class="blueprint-line" style="width: 90%; height: 30px; border: 1px dashed #999; background: transparent;"></div>
                             <div class="blueprint-line" style="width: 15%;"></div>
                         </div>
                     </div>
@@ -750,6 +742,7 @@
             </div>
         </div>
     </section>
+
     <!-- FINAL CTA SECTION -->
     <section id="contact" class="cta-section">
         <div class="container cta-content">
@@ -788,23 +781,24 @@
             </div>
             
             <div class="footer-bottom">
-                <div>&copy; 2026 Zec Code Studio. All internal corporate rights reserved.</div>
+                <div>&copy; 2026 Zec Code Studio. All rights reserved.</div>
                 <div>Designed with absolute precision.</div>
             </div>
         </div>
     </footer>
 
-    <!-- SUBTLE INTERACTION SCRIPTS -->
+    <!-- INTERACTION SCRIPTS -->
     <script>
-        // Smooth header transition control upon scrolling behavior
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.style.padding = '0.2rem 0';
-                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.02)';
             } else {
                 navbar.style.padding = '0';
-                navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.75)';
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+                navbar.style.boxShadow = 'none';
             }
         });
     </script>
