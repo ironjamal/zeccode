@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zec Code — Premium Landing Pages for Serious Brands</title>
+    <meta name="description" content="Zec Code builds high-end, minimal, high-converting landing pages that elevate your brand and maximize revenue. Designed with psychology, built with precision.">
+    <!-- Google Fonts: Inter for ultimate clean, geometric typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- DESIGN SYSTEM & VARIABLES --- */
+        :root {
+            --bg-color: #0a0a0a;
+            --bg-card: #121212;
+            --border-color: #222222;
+            --text-main: #ffffff;
+            --text-muted: #8e8e93;
+            --text-dim: #48484a;
+            --accent: #ffffff;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            font-family: var(--font-sans);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 10rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            line-height: 1.2;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            border-radius: 0px; /* Sharp, premium corners */
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #000000;
+            border: 1px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background-color: rgba(10, 10, 10, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-weight: 400;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 14rem 0 10rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* --- TRUST / SOCIAL PROOF STRIP --- */
+        .ticker-section {
+            padding: 2.5rem 0;
+            background-color: #000000;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+        }
+
+        .ticker-wrapper {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 25s linear infinite;
+        }
+
+        .ticker-item {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--text-dim);
+            padding: 0 4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-item::after {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: var(--border-color);
+            margin-left: 4rem;
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            color: var(--text-main);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .about-subtext {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2.5rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+        }
+
+        .service-card:hover {
+            border-color: var(--text-main);
+            background-color: #000000;
+        }
+
+        .service-icon {
+            margin-bottom: 2.5rem;
+        }
+
+        .service-icon svg {
+            stroke: var(--text-muted);
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon svg {
+            stroke: var(--text-main);
+            transform: translateX(3px);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* --- WHY ZEC CODE SECTION --- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .why-item {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .why-num {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .why-item h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .why-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* --- PORTFOLIO PREVIEW --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .mockup-frame {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Minimal high-end vector lines acting as a premium abstract layout representation */
+        .mockup-blueprint {
+            width: 70%;
+            height: 50%;
+            border: 1px dashed var(--text-dim);
+            opacity: 0.4;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+
+        .blueprint-line {
+            height: 2px;
+            background-color: var(--text-dim);
+            width: 40%;
+        }
+
+        .portfolio-item:hover .mockup-frame {
+            border-color: var(--text-main);
+            background-color: #000000;
+        }
+
+        .portfolio-item:hover .mockup-blueprint {
+            opacity: 1;
+            transform: scale(1.02);
+            border-color: var(--text-muted);
+        }
+
+        .portfolio-info {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .portfolio-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .portfolio-category {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* --- FINAL CTA --- */
+        .cta-section {
+            background-color: #000000;
+            text-align: center;
+            padding: 12rem 0;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        .footer-head {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-main);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 3.2rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+            .footer-brand { grid-column: span 2; }
+            section { padding: 6rem 0; }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-cta { flex-direction: column; }
+            .nav-links { display: none; } /* Kept clean, can toggle or use bottom bar */
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-brand { grid-column: span 1; }
+            .cta-section h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INTERACTION & LAYOUT RHYTHM INTERFACES -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Zec Code</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#why">Philosophy</a>
+                <a href="#work">Work</a>
+            </div>
+            <a href="#contact" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;">Build Yours</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Modern landing pages built for brands that want to grow.</h1>
+            <p>We craft high-converting, premium digital experiences for businesses and startups that value clarity, precision, and business metrics over superficial clutter.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                <a href="#work" class="btn btn-secondary">View Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST / SOCIAL PROOF STRIP -->
+    <div class="ticker-section">
+        <div class="ticker-wrapper">
+            <div class="ticker-item">Modern</div>
+            <div class="ticker-item">Fast</div>
+            <div class="ticker-item">Responsive</div>
+            <div class="ticker-item">Conversion Focused</div>
+            <div class="ticker-item">Business Ready</div>
+            <!-- Duplicated for flawless infinite loop effect -->
+            <div class="ticker-item">Modern</div>
+            <div class="ticker-item">Fast</div>
+            <div class="ticker-item">Responsive</div>
+            <div class="ticker-item">Conversion Focused</div>
+            <div class="ticker-item">Business Ready</div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <span class="section-tag">Identity</span>
+            <div class="about-grid">
+                <div class="about-text">
+                    We eliminate the noise. Zec Code engineers minimal digital architecture tailored strictly to make premium brands look unmistakably professional.
+                </div>
+                <div class="about-subtext">
+                    We believe excellent design is completely transparent. It shouldn't force users to think. By combining behavioral conversion psychology with clean layout infrastructure, we construct websites that command immediate trust and optimize user acquisition velocity.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="container">
+            <span class="section-tag">Capabilities</span>
+            <h2 class="section-title">Engineered for digital dominance.</h2>
+            
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div>
+                        <h3>Landing Pages</h3>
+                        <p>High-conversion performance frameworks targeted strictly to turns clicks into corporate revenue pipelines.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <div>
+                        <h3>Brand Websites</h3>
+                        <p>Sophisticated multi-page digital flags built to define your authority inside your market landscape.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                    <div>
+                        <h3>Startup Websites</h3>
+                        <p>Agile, dynamic structural interfaces deployed quickly to secure rapid early investor and user traction.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M3 20v-8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8"></path></svg>
+                    </div>
+                    <div>
+                        <h3>UI/UX Design</h3>
+                        <p>Psychology-driven design layouts mapped down to the single pixel to retain and guide user attention perfectly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ZEC CODE SECTION -->
+    <section id="why">
+        <div class="container">
+            <span class="section-tag">Value Proposition</span>
+            <h2 class="section-title">Designed for businesses, not just portfolios.</h2>
+            
+            <div class="why-grid">
+                <div class="why-item">
+                    <span class="why-num">01 / TRUST</span>
+                    <h4>Designed to build trust</h4>
+                    <p>Clean alignment and deliberate spacing communicates corporate maturity instantly.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-num">02 / SPEED</span>
+                    <h4>Fast-loading pages</h4>
+                    <p>Bloatware-free execution guarantees lightning load metrics across deep data connections.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-num">03 / MOBILE</span>
+                    <h4>Optimized for mobile users</h4>
+                    <p>Flawless responsive behavior keeping mobile conversions fully consistent.</p>
+                </div>
+                <div class="why-item">
+                    <span class="why-num">04 / EXPERIENCE</span>
+                    <h4>Clean user experience</h4>
+                    <p>Eliminating interaction stress to guide structural visitors safely towards conversions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO PREVIEW -->
+    <section id="work">
+        <div class="container">
+            <span class="section-tag">Selected Case Works</span>
+            <h2 class="section-title">The anatomy of premium high performance.</h2>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1: Zeus Bus (Live Embedded Web Interface) -->
+                <div class="portfolio-item-wrapper" style="grid-column: span 2;">
+                    <div class="mockup-frame live-embed-frame" style="height: 540px; position: relative; padding: 0; background: #000; overflow: hidden;">
+                        
+                        <!-- Real-time Interactive Embedded Iframe -->
+                        <iframe src="https://ironjamal.github.io/zeus-bus/" title="Zeus Bus Live Preview" style="width: 100%; height: 100%; border: none; opacity: 0.5; transition: var(--transition-smooth); pointer-events: none;"></iframe>
+                        
+                        <!-- Elite UI Glass Overlay Layer (Disappears smoothly on hover to unlock scrolling) -->
+                        <div class="embed-overlay" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; transition: var(--transition-smooth); cursor: pointer; z-index: 2;">
+                            <div class="action-badge" style="background: #ffffff; color: #000000; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; padding: 0.8rem 1.5rem; transition: var(--transition-smooth);">
+                                Interact With Live Interface
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <span class="portfolio-title" style="font-size: 1.3rem;">Zeus Bus Logistics</span>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; font-weight: 300;">High-contrast corporate transit landing infrastructure & data acquisition engine.</p>
+                        </div>
+                        <span class="portfolio-category">01 / Transportation Line</span>
+                    </div>
+                </div>
+
+                <!-- Custom Scoping CSS Styles for Live Frame System -->
+                <style>
+                    .live-embed-frame:hover iframe {
+                        opacity: 1 !important;
+                        pointer-events: auto !important;
+                    }
+                    .live-embed-frame:hover .embed-overlay {
+                        opacity: 0;
+                        visibility: hidden;
+                        pointer-events: none;
+                    }
+                    .live-embed-frame:hover {
+                        border-color: var(--text-main) !important;
+                    }
+                    @media (max-width: 968px) {
+                        .portfolio-item-wrapper[style*="grid-column: span 2"] {
+                            grid-column: span 1 !important;
+                        }
+                        .live-embed-frame {
+                            height: 400px !important;
+                        }
+                    }
+                </style>
+
+                <!-- Project 2 -->
+                <a href="#contact" class="portfolio-item">
+                    <div class="mockup-frame">
+                        <div class="mockup-blueprint">
+                            <div class="blueprint-line" style="width: 25%;"></div>
+                            <div class="blueprint-line" style="width: 80%; height: 20px;"></div>
+                            <div class="blueprint-line" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <span class="portfolio-title">Aethelgard Venture Capital</span>
+                        </div>
+                        <span class="portfolio-category">02 / Financial Platform</span>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="#contact" class="portfolio-item">
+                    <div class="mockup-frame">
+                        <div class="mockup-blueprint">
+                            <div class="blueprint-line" style="width: 40%;"></div>
+                            <div class="blueprint-line" style="width: 90%; height: 30px; border: 1px dashed var(--text-dim); background: transparent;"></div>
+                            <div class="blueprint-line" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div>
+                            <span class="portfolio-title">Krypton Protocol Corp</span>
+                        </div>
+                        <span class="portfolio-category">03 / Web3 Framework</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- FINAL CTA SECTION -->
+    <section id="contact" class="cta-section">
+        <div class="container cta-content">
+            <h2>Your website is your first impression.</h2>
+            <p>Don't leave user conversion up to chance. Let us engineer a sophisticated, clean infrastructure built specifically to reflect your brand's elite quality status.</p>
+            <a href="mailto:hello@zeccode.com" class="btn btn-primary">Initiate Project Brief</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Zec Code</a>
+                    <p>Premium web engineering architectures dedicated to scaling operational business trust and conversion velocity global wide.</p>
+                </div>
+                <div>
+                    <h5 class="footer-head">Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Studio</a></li>
+                        <li><a href="#services">Core Capabilities</a></li>
+                        <li><a href="#why">The Philosophy</a></li>
+                        <li><a href="#work">Case Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-head">Connect</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Read.cv</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>&copy; 2026 Zec Code Studio. All internal corporate rights reserved.</div>
+                <div>Designed with absolute precision.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUBTLE INTERACTION SCRIPTS -->
+    <script>
+        // Smooth header transition control upon scrolling behavior
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.2rem 0';
+                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                navbar.style.padding = '0';
+                navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.75)';
+            }
+        });
+    </script>
+</body>
+</html>
