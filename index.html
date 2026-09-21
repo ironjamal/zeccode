@@ -8,13 +8,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="ZEC Code | Digital Product Studio">
 <meta property="og:description" content="We design and build websites, digital products and business systems for companies that need them to work.">
-<meta property="og:image" content="logo.png">
+<meta property="og:image" content="olo.png">
 <!-- Add <link rel="canonical" href="https://YOUR-DOMAIN/"> once the production domain is fixed -->
-<link rel="icon" type="image/png" href="logo.png">
+<link rel="icon" type="image/png" href="olo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"ZEC Code","description":"Digital product studio designing and building websites, digital products and business systems.","image":"logo.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"ZEC Code","description":"Digital product studio designing and building websites, digital products and business systems.","image":"olo.png"}</script>
 <style>
 :root{--bg:#fff;--off:#f6f6f6;--line:rgba(0,0,0,.12);--ink:#000;--mute:#66666b;--display:'Outfit',-apple-system,sans-serif;--sans:'Inter',-apple-system,sans-serif;--ease:cubic-bezier(.16,1,.3,1)}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -43,7 +43,8 @@ nav{position:fixed;top:0;width:100%;z-index:100;border-bottom:1px solid transpar
 nav.scrolled,nav.open{background:rgba(255,255,255,.97);border-color:var(--line)}
 .nav-in{display:flex;align-items:center;height:6rem;gap:3rem;transition:height .5s var(--ease)}
 nav.scrolled .nav-in{height:4.75rem}
-.logo{font:700 1.15rem var(--display);letter-spacing:-.02em;text-transform:uppercase;text-decoration:none;position:relative;z-index:2}
+.logo{display:inline-flex;align-items:center;text-decoration:none;position:relative;z-index:2}
+.logo img{display:block;height:1.6rem;width:auto}
 .nav-links{display:flex;gap:3.5rem;margin-left:auto}
 .nav-links a{font-size:.85rem;color:var(--mute);text-decoration:none;padding:.4rem 0;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:color .3s,background-size .5s var(--ease)}
 .nav-links a:hover{color:var(--ink);background-size:100% 1px}
@@ -137,6 +138,7 @@ footer{padding:clamp(4rem,7vw,7rem) 0 2.5rem;border-top:1px solid var(--line)}
 .f-grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(1rem,2vw,2rem);row-gap:3rem;margin-bottom:5rem}
 .f-grid>:nth-child(1){grid-column:1/6}.f-grid>:nth-child(2){grid-column:7/9}.f-grid>:nth-child(3){grid-column:9/11}.f-grid>:nth-child(4){grid-column:11/13}
 .f-grid p{color:var(--mute);font-weight:300;font-size:.95rem;max-width:22rem;margin-top:1.2rem;line-height:1.7}
+.f-grid .logo img{height:2rem}
 .f-grid h4{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--mute);margin-bottom:1.4rem}
 .f-grid ul{list-style:none}.f-grid li{margin-bottom:.8rem}
 .f-grid li a{text-decoration:none;font-size:.92rem;font-weight:300}.f-grid li a:hover{text-decoration:underline}
@@ -160,6 +162,7 @@ footer{padding:clamp(4rem,7vw,7rem) 0 2.5rem;border-top:1px solid var(--line)}
 }
 @media(max-width:768px){
  .nav-in{height:4.5rem}
+ .logo img{height:1.4rem}
  .menu-btn{display:block}.nav-cta{display:none}
  .nav-links{position:fixed;inset:0;background:#fff;flex-direction:column;gap:0;padding:6rem max(1.5rem,4vw) 2rem;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
  nav.open .nav-links{opacity:1;visibility:visible}
@@ -180,7 +183,7 @@ footer{padding:clamp(4rem,7vw,7rem) 0 2.5rem;border-top:1px solid var(--line)}
 
 <nav id="navbar" aria-label="Main">
  <div class="container nav-in">
-  <a href="#top" class="logo">ZEC Code</a>
+  <a href="#top" class="logo" aria-label="ZEC Code, back to top"><img src="olo.png" alt="ZEC" width="536" height="153"></a>
   <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
   <div class="nav-links" id="links">
    <a href="#work">Work</a>
@@ -361,7 +364,7 @@ footer{padding:clamp(4rem,7vw,7rem) 0 2.5rem;border-top:1px solid var(--line)}
 <footer>
  <div class="container">
   <div class="f-grid">
-   <div><a href="#top" class="logo">ZEC Code</a><p>A digital product studio designing and building websites, products and business systems.</p></div>
+   <div><a href="#top" class="logo" aria-label="ZEC Code, back to top"><img src="olo.png" alt="ZEC" width="536" height="153"></a><p>A digital product studio designing and building websites, products and business systems.</p></div>
    <div><h4>Studio</h4><ul><li><a href="#work">Work</a></li><li><a href="#approach">Approach</a></li><li><a href="#about">About</a></li></ul></div>
    <div><h4>Services</h4><ul><li><a href="#services">Websites</a></li><li><a href="#services">Landing pages</a></li><li><a href="#services">Digital products</a></li><li><a href="#services">Business systems</a></li></ul></div>
    <div><h4>Contact</h4><ul><li><a href="#contact">Start a Project</a></li><li><a href="#faq">FAQ</a></li></ul><!-- Add email and social links here when ready --></div>
